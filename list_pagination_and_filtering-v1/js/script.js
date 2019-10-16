@@ -17,6 +17,8 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
+const studentList = document.querySelector(".student-list").children
+const maxItems = 10
 
 
 
@@ -34,7 +36,9 @@ FSJS project 2 - List Filter and Pagination
        that will be passed into the parens later when you call or 
        "invoke" the function 
 ***/
-
+function showPage () {
+   
+}
 
 
 
