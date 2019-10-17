@@ -72,6 +72,9 @@ function appendPageLinks () {
       let newAnchor = document.createElement('a')
       newAnchor.href = "#"
       newAnchor.textContent = i
+      if (i === 1) {
+         newAnchor.className = "active"
+      }
       let page = newListItem.appendChild(newAnchor)
       ul.appendChild(newListItem)
       
@@ -90,6 +93,7 @@ function appendPageLinks () {
    parent.insertBefore(div, undefined)
 }
 
+showPage(studentList, 1)
 appendPageLinks()
 
 
