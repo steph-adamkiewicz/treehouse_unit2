@@ -50,15 +50,29 @@ function showPage (list, page) {
    }
 }
 
-
-
-
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
 
+function appendPageLinks () {
+   const length = studentList.length
+   const numOfPages = Math.round(length / maxItems) + 1
+   const parent = document.querySelector(".student-list").parentNode //studentList.parentNode
+   console.log(parent)
+   
+   for (let i = 1; i <= numOfPages; i++) {
+      //create one button for each page
+      let newButton = document.createElement('button')
+      newButton.name = i
+      newButton.value = i
+      
+      parent.insertBefore(newButton, undefined)
+      //add listeners to each button
+   }
+}
 
+appendPageLinks()
 
 
 
