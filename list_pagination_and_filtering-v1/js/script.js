@@ -36,9 +36,20 @@ const maxItems = 10
        that will be passed into the parens later when you call or 
        "invoke" the function 
 ***/
-function showPage () {
-   
+function showPage (list, page) {
+   const length = list.length
+   const end = Math.min(length, page * maxItems)
+   const start = page * maxItems - maxItems
+
+   for (let i = 0; i < length; i ++) {
+      if (i < start || i >= end) {
+         list[i].style.display = "none"
+      } else {
+         list[i].style.display = ""
+      }
+   }
 }
+
 
 
 
