@@ -58,18 +58,27 @@ function showPage (list, page) {
 function appendPageLinks () {
    const length = studentList.length
    const numOfPages = Math.round(length / maxItems) + 1
-   const parent = document.querySelector(".student-list").parentNode //studentList.parentNode
-   console.log(parent)
+
+   //determine where to set page list
+   const parent = document.querySelector(".student-list").parentNode 
+   let div = document.createElement('div')
+   div.className = "pagination"
+   let ul = document.createElement('ul')
    
+   //create each list item
    for (let i = 1; i <= numOfPages; i++) {
-      //create one button for each page
-      let newButton = document.createElement('button')
-      newButton.name = i
-      newButton.value = i
+      //create one li for each page
+      let newListItem = document.createElement('li')
+      let newAnchor = document.createElement('a')
+      newAnchor.href = "#"
+      newAnchor.textContent = i
+      let page = newListItem.appendChild(newAnchor)
+      ul.appendChild(newListItem)
       
-      parent.insertBefore(newButton, undefined)
       //add listeners to each button
    }
+   div.appendChild(ul)   
+   parent.insertBefore(div, undefined)
 }
 
 appendPageLinks()
