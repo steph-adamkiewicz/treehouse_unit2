@@ -76,6 +76,15 @@ function appendPageLinks () {
       ul.appendChild(newListItem)
       
       //add listeners to each button
+      newAnchor.addEventListener('click', () => {
+         const allAnchor = document.querySelectorAll('a')
+         for (let ct in allAnchor) {
+            allAnchor[ct].className = ""
+         }
+         newAnchor.className = "active"
+         showPage(studentList, newAnchor.textContent)
+         //need to remove active class from other anchor tags
+     })
    }
    div.appendChild(ul)   
    parent.insertBefore(div, undefined)
